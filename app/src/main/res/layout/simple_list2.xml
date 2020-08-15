@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:weightSum="100"
+    android:background="@drawable/customborder"
+    >
+
+
+    <!-- Row 2 with 3 columns -->
+
+    <TextView
+        android:id="@+id/list2Text"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_column="1"
+        android:layout_gravity="center"
+        android:layout_weight="10"
+        android:background="#cac9c9"
+        android:gravity="center"
+        android:text="TextView1"
+        android:textAlignment="center" />
+
+    <TableRow
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/list2Text1"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/consumption"
+            android:gravity="center"
+            android:padding="20dip"
+            android:text="textView2"
+            android:textColor="#000000" />
+
+
+
+    </TableRow>
+
+</LinearLayout>
