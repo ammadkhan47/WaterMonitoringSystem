@@ -32,6 +32,11 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+
+        androidx.appcompat.app.ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
+
         uname= findViewById(R.id.uname);
         uemail= findViewById(R.id.uemail);
         upass= findViewById(R.id.upass);
