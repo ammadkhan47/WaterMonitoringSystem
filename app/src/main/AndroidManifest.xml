@@ -16,11 +16,7 @@
         <activity android:name=".Dconsumption"></activity>
         <activity android:name=".Avg" />
         <activity android:name=".dashboard">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".Quality" />
         <activity android:name=".Simplev" />
@@ -35,12 +31,15 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_key" />
 
-        <activity android:name=".Average" />
         <activity android:name=".Home" />
         <activity android:name=".Phgraph" />
         <activity android:name=".Register" />
         <activity android:name=".Login" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity" > <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+
+        <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter> </activity>
         <activity android:name=".Map" />
         <activity android:name=".Monitoring" />
     </application>
