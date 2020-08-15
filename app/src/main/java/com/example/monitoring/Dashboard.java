@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
-public class dashboard extends AppCompatActivity {
+public class Dashboard extends AppCompatActivity {
 
     ImageView quality,report,consumption,bill,map,average;
 
@@ -40,7 +40,7 @@ public class dashboard extends AppCompatActivity {
         report.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),Phgraph.class));
+                startActivity(new Intent(getApplicationContext(), Graph.class));
             }
         });
 

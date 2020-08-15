@@ -3,21 +3,12 @@ package com.example.monitoring;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 
-import com.google.android.gms.maps.model.BitmapDescriptor;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.Marker;
 import com.google.firebase.database.DataSnapshot;
@@ -26,7 +17,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
@@ -80,7 +70,7 @@ public class Map extends AppCompatActivity implements OnMapReadyCallback  {
 
 
     public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), dashboard.class);
+        Intent myIntent = new Intent(getApplicationContext(), Dashboard.class);
         startActivityForResult(myIntent, 0);
         return true;
     }

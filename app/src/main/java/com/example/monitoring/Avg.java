@@ -58,8 +58,9 @@ public class Avg extends AppCompatActivity {
                 final ArrayList<Member> peopleList = new ArrayList<>();
                 final Member john[] = new Member[10];
 
-                    for (int i = 0; i < 3; i++) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
 
+                    int i=0;
                         SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yyyy");
                         Calendar c = Calendar.getInstance();
                         try {
@@ -71,14 +72,15 @@ public class Avg extends AppCompatActivity {
                         query = sdf.format(c.getTime());  // dt is now the new date
 
                         john[i] = new Member(query,
-                                dataSnapshot.child(query).child("Temp").getValue().toString(),
-                                dataSnapshot.child(query).child("Turb").getValue().toString(),
-                                dataSnapshot.child(query).child("PH").getValue().toString());
+                                snapshot.child("Temp").getValue().toString(),
+                                snapshot.child("Turb").getValue().toString(),
+                                snapshot.child("PH").getValue().toString());
 
                         startSignal.countDown();
 
                         peopleList.add(john[i]);
 
+                        i++;
 
                     }
 
@@ -126,7 +128,7 @@ public class Avg extends AppCompatActivity {
     }
 
     public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), dashboard.class);
+        Intent myIntent = new Intent(getApplicationContext(), Dashboard.class);
         startActivityForResult(myIntent, 0);
         return true;
     }

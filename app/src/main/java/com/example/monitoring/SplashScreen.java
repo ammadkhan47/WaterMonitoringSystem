@@ -5,16 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-
-public class MainActivity extends AppCompatActivity {
+public class SplashScreen extends AppCompatActivity {
 
 
     private static int SPLASH_SCREEN = 5000;
@@ -31,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent=new Intent(MainActivity.this,Login.class);
+                Intent intent=new Intent(SplashScreen.this,Login.class);
                 startActivity(intent);
                 finish();
             }

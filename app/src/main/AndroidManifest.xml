@@ -15,11 +15,11 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Dconsumption"></activity>
         <activity android:name=".Avg" />
-        <activity android:name=".dashboard">
+        <activity android:name=".Dashboard">
 
         </activity>
         <activity android:name=".Quality" />
-        <activity android:name=".Simplev" />
+        <activity android:name=".SimpleView" />
         <activity android:name=".Datebill" />
         <activity android:name=".Currentbill" />
         <activity android:name=".Generatebill" />
@@ -31,17 +31,16 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_key" />
 
-        <activity android:name=".Home" />
-        <activity android:name=".Phgraph" />
+        <activity android:name=".Graph" />
         <activity android:name=".Register" />
         <activity android:name=".Login" />
-        <activity android:name=".MainActivity" > <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".SplashScreen" >  <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-        <category android:name="android.intent.category.LAUNCHER" />
+            <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter> </activity>
         <activity android:name=".Map" />
-        <activity android:name=".Monitoring" />
+        <activity android:name=".AdvanceView" />
     </application>
 
 </manifest>

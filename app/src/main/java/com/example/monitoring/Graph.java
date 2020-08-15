@@ -10,14 +10,10 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -34,7 +30,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class Phgraph extends AppCompatActivity  {
+public class Graph extends AppCompatActivity  {
 
     DatabaseReference db;
     TextView tv7,tv8,tv10;
@@ -85,8 +81,9 @@ public class Phgraph extends AppCompatActivity  {
 
                 String query = "00-07-2020";  // Start date
 
-                for(int i=0;i<3;i++) {
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
 
+                    int i=0;
                     SimpleDateFormat sdf = new SimpleDateFormat("dd-mm-yyyy");
                     Calendar c = Calendar.getInstance();
                     try {
@@ -98,9 +95,9 @@ public class Phgraph extends AppCompatActivity  {
                     query = sdf.format(c.getTime());  // dt is now the new date
 
 
-                    String templ = dataSnapshot.child(query).child("Temp").getValue().toString();
-                    String turbl = dataSnapshot.child(query).child("Turb").getValue().toString();
-                    String phl = dataSnapshot.child(query).child("PH").getValue().toString();
+                    String templ = snapshot.child("Temp").getValue().toString();
+                    String turbl = snapshot.child("Turb").getValue().toString();
+                    String phl = snapshot.child("PH").getValue().toString();
 
 
                     startSignal.countDown();
@@ -108,6 +105,8 @@ public class Phgraph extends AppCompatActivity  {
                     values1.add(new BarEntry(i, Float.valueOf(templ)));
                     values2.add(new BarEntry(i, Float.valueOf(turbl)));
                     values3.add(new BarEntry(i, Float.valueOf(phl)));
+
+                    i++;
 
                 }
 
@@ -173,7 +172,7 @@ public class Phgraph extends AppCompatActivity  {
 
 
     public boolean onOptionsItemSelected(MenuItem item){
-        Intent myIntent = new Intent(getApplicationContext(), dashboard.class);
+        Intent myIntent = new Intent(getApplicationContext(), Dashboard.class);
         startActivityForResult(myIntent, 0);
         return true;
     }

@@ -18,7 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class Monitoring extends AppCompatActivity {
+public class AdvanceView extends AppCompatActivity {
 
 
 
@@ -63,10 +63,10 @@ public class Monitoring extends AppCompatActivity {
                 }
 
 
-                temp.setText(templ);
-                turb.setText(turbl);
-                ph.setText(phl);
-                level.setText(level1);
+                temp.setText(templ+" °C");
+                turb.setText(turbl+" NTU");
+                ph.setText(phl+" pH");
+                level.setText(level1+" m");
 
 
 

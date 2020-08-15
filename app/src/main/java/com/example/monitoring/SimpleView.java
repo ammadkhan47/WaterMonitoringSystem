@@ -19,7 +19,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class Simplev extends AppCompatActivity {
+public class SimpleView extends AppCompatActivity {
     TextView tv8;
     DatabaseReference db;
     Button btn14;
